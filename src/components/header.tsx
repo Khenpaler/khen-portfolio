@@ -29,7 +29,7 @@ export default function Header() {
   };
 
   // Update active link based on scroll position
-  const handleSetActiveLink = (section : any) => {
+  const handleSetActiveLink = (section: string) => {
     setActiveLink(section);
   };
 

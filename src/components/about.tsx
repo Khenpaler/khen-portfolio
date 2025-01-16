@@ -28,7 +28,7 @@ export default function AboutMe() {
               className="grid md:grid-cols-2 gap-8 items-center"
             >
               <div className={item % 2 === 0 ? "md:order-2" : ""}>
-                <span className="text-sm text-green-500 font-medium">What I'm Doing</span>
+                <span className="text-sm text-green-500 font-medium">What I&apos;m Doing</span>
                 <h3 className="text-2xl md:text-3xl font-bold mt-2 mb-4">
                   {item === 1 ? "Building Scalable Web Apps" : "Creating Mobile Solutions"}
                 </h3>

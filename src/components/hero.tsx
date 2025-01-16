@@ -17,7 +17,7 @@ export default function Hero() {
               Khen Harold Paler
             </h1>
             <p className="text-base md:text-lg text-gray-400 mb-8">
-              Hi, I'm a 4th-year BSIT student and a full-stack developer passionate about creating efficient and scalable applications. 
+              Hi, I&apos;m a 4th-year BSIT student and a full-stack developer passionate about creating efficient and scalable applications. 
               I specialize in Laravel, React Native, and Next.js to deliver seamless web and mobile solutions.
             </p>
             <a

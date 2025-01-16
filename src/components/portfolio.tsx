@@ -8,7 +8,7 @@ export default function Portfolio() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedImage, setSelectedImage] = useState("")
 
-  const handleImageClick = (image: any) => {
+  const handleImageClick = (image: string) => {
     setSelectedImage(image)
     setIsModalOpen(true)
   }
