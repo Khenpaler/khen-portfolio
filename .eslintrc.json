@@ -14,8 +14,8 @@
   ],
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
-    "react/no-unescaped-entities": "warn",
-    "@typescript-eslint/no-explicit-any": "warn",
+    "react/no-unescaped-entities": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
