@@ -30,9 +30,9 @@ export default function Hero() {
             </a>
             <div className="mt-12 flex gap-6">
               {[
-                { src: "/images/hero/facebook.png", alt: "Facebook", href: "https://web.facebook.com/khenpro123" },
-                { src: "/images/hero/tiktok.png", alt: "TikTok", href: "https://www.tiktok.com/@khen732" },
-                { src: "/images/hero/github.png", alt: "GitHub", href: "https://github.com/Khenpaler" }
+                { src: "./images/hero/facebook.png", alt: "Facebook", href: "https://web.facebook.com/khenpro123" },
+                { src: "./images/hero/tiktok.png", alt: "TikTok", href: "https://www.tiktok.com/@khen732" },
+                { src: "./images/hero/github.png", alt: "GitHub", href: "https://github.com/Khenpaler" }
               ].map((social, index) => (
                 <motion.div
                   key={index}
@@ -62,7 +62,7 @@ export default function Hero() {
             <div className="aspect-square rounded-full overflow-hidden relative max-w-[500px] mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-transparent z-10" />
               <Image
-                src="/images/hero/khen_pic.jpg"
+                src="./images/hero/khen_pic.jpg"
                 alt="Profile"
                 fill
                 className="object-cover"

@@ -39,35 +39,35 @@ export default function Portfolio() {
               title: "TransitTrack: Fleet Management System",
               description: "A fleet management system for Canitoan Transport Cooperative to track buses, employees, maintenance scheduling, and fuel monitoring.",
               techStack: ["Next.js", "Tailwind CSS", "React Native", "Typescript", "Laravel", "MySQL", "Pusher", "Flespi",  "Sinotrack"],
-              image: "/images/portfolio/transittrack.png",
+              image: "./images/portfolio/transittrack.png",
               link: "/portfolio/transittrack"
             },
             {
               title: "Event Wise",
               description: "A comprehensive event management system designed to handle the scheduling, organization, and tracking of events. It allows users to create, manage, and attend events, with features such as notifications, ticketing, and detailed event information.",
               techStack: ["Next.js", "React Native", "Laravel"],
-              image: "/images/portfolio/eventwise.png",
+              image: "./images/portfolio/eventwise.png",
               link: "/portfolio/eventwise"
             },
             {
               title: "POKUS: Student Companion",
               description: "An app to help students with study scheduling and time management.",
               techStack: ["React Native", "Firebase"],
-              image: "/images/portfolio/pokus.png",
+              image: "./images/portfolio/pokus.png",
               link: "/portfolio/pokus"
             },
             {
               title: "Scholar Attendance Monitoring System",
               description: "A system designed for monitoring student attendance, with functionalities for recording, tracking, and generating reports on student attendance patterns.",
               techStack: ["Lumen Laravel"],
-              image: "/images/portfolio/scholar-attendance.png",
+              image: "./images/portfolio/scholar-attendance.png",
               link: "/portfolio/scholar-attendance"
             },
             {
               title: "Kent & Kent's Barber Shop",
               description: "A web-based system for managing barber shop operations, allowing users to schedule appointments, track services, and manage client information.",
               techStack: ["HTML", "CSS", "JavaScript"],
-              image: "/images/portfolio/business_barber.png",
+              image: "./images/portfolio/business_barber.png",
               link: "/portfolio/kent-barber-shop"
             }
           ].map((project, index) => (

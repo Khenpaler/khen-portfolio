@@ -50,8 +50,8 @@ export default function AboutMe() {
                   <Image
                     src={
                       item === 1
-                        ? "/images/about/web.png"
-                        : "/images/about/mobile.png"
+                        ? "./images/about/web.png"
+                        : "./images/about/mobile.png"
                     }
                     alt={item === 1 ? "Web Development" : "Mobile Development"}
                     fill

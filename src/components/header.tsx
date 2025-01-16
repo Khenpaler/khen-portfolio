@@ -49,7 +49,7 @@ export default function Header() {
             onClick={handleLogoClick} // Reset active link on logo click
           >
             <Image 
-              src="/k_logo.png"
+              src="./k_logo.png"
               alt="Logo"
               width={150} 
               height={40}

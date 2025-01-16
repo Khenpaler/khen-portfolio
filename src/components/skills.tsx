@@ -21,12 +21,12 @@ export default function Skills() {
         {/* Skills and Technologies */}
         <div className="grid md:grid-cols-2 gap-8">
           {[
-            { name: "Next.js", level: 30, image: "/images/tech/nextjs.png" },
-            { name: "React Native", level: 80, image: "/images/tech/react.png" },
-            { name: "Laravel", level: 80, image: "/images/tech/laravel.png" },
-            { name: "MySQL", level: 80, image: "/images/tech/mysql.png" },
-            { name: "Git", level: 80, image: "/images/tech/git.png" },
-            { name: "UX/UI", level: 50, image: "/images/tech/ui-ux.png" },
+            { name: "Next.js", level: 30, image: "./images/tech/nextjs.png" },
+            { name: "React Native", level: 80, image: "./images/tech/react.png" },
+            { name: "Laravel", level: 80, image: "./images/tech/laravel.png" },
+            { name: "MySQL", level: 80, image: "./images/tech/mysql.png" },
+            { name: "Git", level: 80, image: "./images/tech/git.png" },
+            { name: "UX/UI", level: 50, image: "./images/tech/ui-ux.png" },
           ].map((skill) => (
             <motion.div
               key={skill.name}
