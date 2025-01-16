@@ -104,7 +104,7 @@ export default function Portfolio() {
       {/* Modal for displaying the image */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="relative">
+          <div className="relative p-4 max-h-screen overflow-y-auto">
             <button
               className="absolute top-0 right-0 text-white text-3xl font-bold"
               onClick={closeModal}
