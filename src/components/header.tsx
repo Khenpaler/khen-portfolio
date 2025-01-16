@@ -11,32 +11,49 @@ export default function Header() {
   const [activeLink, setActiveLink] = useState('')
 
   useEffect(() => {
+    // Handle scroll-to-top button visibility
     const handleScroll = () => {
       if (window.scrollY > 300) {
-        setIsVisible(true);  // Show button after scrolling down 300px
+        setIsVisible(true)
       } else {
-        setIsVisible(false); // Hide button when at the top
+        setIsVisible(false)
       }
-    };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      // Reset active link when at the very top of the page
+      if (window.scrollY === 0) {
+        setActiveLink('')
+      }
+    }
+
+    // Highlight active link based on scrolling
+    const sections = document.querySelectorAll("section[id]")
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+
+        if (visibleSections.length > 0) {
+          const id = visibleSections[0].target.id
+          setActiveLink(id.charAt(0).toUpperCase() + id.slice(1))
+        }
+      },
+      { threshold: 0.4 } // Trigger when 60% of the section is visible
+    )
+
+    sections.forEach((section) => observer.observe(section))
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setActiveLink(''); // Reset active link when going to top
-  };
-
-  // Update active link based on scroll position
-  const handleSetActiveLink = (section: string) => {
-    setActiveLink(section);
-  };
-
-  // Reset active link when clicking the logo
-  const handleLogoClick = () => {
-    setActiveLink('');
-  };
+    window.scrollTo({ top: 0, behavior: "smooth" })
+    setActiveLink('') // Reset active link when going to top
+  }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -46,7 +63,7 @@ export default function Header() {
           <Link 
             href="/" 
             className="text-xl hover:text-green-500 transition-colors font-bold"
-            onClick={handleLogoClick} // Reset active link on logo click
+            onClick={() => setActiveLink('')} // Reset active link on logo click
           >
             <Image 
               src="./k_logo.png"
@@ -72,20 +89,20 @@ export default function Header() {
             md:static md:bg-transparent md:translate-x-0 md:backdrop-blur-none
           `}>
             <div className="flex flex-col items-center justify-center h-full space-y-8 md:space-y-0 md:flex-row md:items-center md:justify-end md:space-x-8">
-              {['About', 'Skills', 'Portfolio', 'Contact'].map((item) => (
+              {['about', 'skills', 'portfolio', 'contact'].map((item) => (
                 <Link
                   key={item}
-                  href={`#${item.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '')}`}
+                  href={`#${item}`}
                   className={`
                     text-2xl sm:text-xl md:text-lg lg:text-xl xl:text-2xl relative group 
-                    ${activeLink === item ? 'text-green-500' : 'hover:text-green-500'}  // Highlight active link
+                    ${activeLink.toLowerCase() === item ? 'text-green-500' : 'hover:text-green-500'}  // Highlight active link
                   `}
                   onClick={() => {
-                    handleSetActiveLink(item);
-                    setIsMenuOpen(false);
+                    setActiveLink(item)
+                    setIsMenuOpen(false)
                   }}
                 >
-                  {item}
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-500 transition-all group-hover:w-full" />
                 </Link>
               ))}
@@ -95,10 +112,7 @@ export default function Header() {
       </nav>
       {isVisible && (
         <button
-          onClick={() => {
-            scrollToTop();
-            setActiveLink(''); // Reset active link when going back to top
-          }}
+          onClick={scrollToTop}
           className="fixed bottom-10 right-10 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-400 transition-colors"
         >
           ↑
