@@ -21,7 +21,7 @@ export default function Hero() {
               I specialize in Laravel, React Native, and Next.js to deliver seamless web and mobile solutions.
             </p>
             <a
-              href="/docs/Khen_Harold_Paler_CV.pdf"
+              href="khen-portfolio/docs/Khen_Harold_Paler_CV.pdf"
               download="Khen_Harold_Paler_CV.pdf"
               className="relative group px-6 md:px-8 py-2 md:py-3 rounded-full overflow-hidden inline-block"
             >
